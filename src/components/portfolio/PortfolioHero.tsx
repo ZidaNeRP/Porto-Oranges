@@ -1,0 +1,69 @@
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { Download, Mail } from 'lucide-react';
+import FadeIn from '../animations/FadeIn';
+
+const PortfolioHero = () => {
+  return (
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-background to-muted/30 relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(68,68,68,.1)_50%,transparent_75%,transparent)] bg-[length:20px_20px]"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 py-20">
+        <div className="max-w-4xl mx-auto text-center">
+          <FadeIn delay={200}>
+            <div className="mb-8">
+              <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center border border-primary/20">
+                <div className="w-28 h-28 rounded-full bg-muted flex items-center justify-center text-4xl font-bold text-primary">
+                  ZRP
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+          
+          <FadeIn delay={300}>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+              Zidane Romandhon Putra
+            </h1>
+          </FadeIn>
+          
+          <FadeIn delay={400}>
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto text-balance">
+              Bridging Business Goals with Scalable Tech Solutions
+            </p>
+          </FadeIn>
+          
+          <FadeIn delay={500}>
+            <p className="text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Project Manager • Business Analyst • System Analyst specializing in SDLC, process optimization, and cross-functional team leadership
+            </p>
+          </FadeIn>
+          
+          <FadeIn delay={600}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="group">
+                <Download className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                Download CV
+              </Button>
+              <Button variant="outline" size="lg" className="group">
+                <Mail className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                Contact Me
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
+      </div>
+      
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-primary/30 rounded-full p-1">
+          <div className="w-1 h-3 bg-primary/50 rounded-full mx-auto animate-pulse"></div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PortfolioHero;
