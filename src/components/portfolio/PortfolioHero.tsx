@@ -48,8 +48,14 @@ const PortfolioHero = () => {
           <FadeIn delay={600}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="group">
-                <Download className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
-                Download CV
+                <a
+                  href="/Zidane Romandhon Putra-CV.pdf"
+                  download
+                  className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-colors border rounded-md bg-white text-black hover:bg-gray-200 group"
+                >
+                  <Download className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
+                  Download CV
+                </a>
               </Button>
               <Button variant="outline" size="lg" className="group">
                 <Mail className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />

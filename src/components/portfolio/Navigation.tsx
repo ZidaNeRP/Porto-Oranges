@@ -51,7 +51,7 @@ const Navigation = () => {
             onClick={() => scrollToSection('home')}
             className="text-xl font-bold text-primary hover:text-primary/80 transition-colors"
           >
-            ZRP
+            ZRP Portofolio
           </button>
 
           {/* Desktop Navigation */}
