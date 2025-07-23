@@ -49,7 +49,7 @@ const Navigation = () => {
           {/* Logo */}
           <button 
             onClick={() => scrollToSection('home')}
-            className="text-xl font-bold text-primary hover:text-primary/80 transition-colors"
+            className="text-xl font-bold text-black hover:text-primary/80 transition-colors"
           >
             ZRP Portofolio
           </button>
@@ -60,7 +60,7 @@ const Navigation = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                className="text-sm font-medium text-black hover:text-foreground transition-colors"
               >
                 {item.label}
               </button>

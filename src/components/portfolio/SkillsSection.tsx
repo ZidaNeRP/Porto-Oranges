@@ -43,20 +43,15 @@ const SkillsSection = () => {
       year: "2022",
       type: "Technical Certification"
     },
-    {
-      title: "HAKI Registration Handling",
-      issuer: "Ministry of Law and Human Rights",
-      year: "2023",
-      type: "Specialized Training"
-    }
+
   ];
 
   const achievements = [
-    "Successfully managed 15+ cross-functional projects",
-    "Led digital transformation initiatives saving 40% processing time",
-    "Designed systems serving 10,000+ concurrent users",
-    "Achieved 98% stakeholder satisfaction rate",
-    "Reduced system integration time by 50%"
+    "Managed 2 cross-functional projects in digital system development for logistics and education sectors",
+    "Led website and system development as System Analyst and Team Lead",
+    "Designed UI/UX and coordinated with developers to meet business and user needs",
+    "Designed UI/UX and coordinated with developers to meet business and user needs",
+    "Contributed to HAKI registration and legal compliance of digital products"
   ];
 
   return (

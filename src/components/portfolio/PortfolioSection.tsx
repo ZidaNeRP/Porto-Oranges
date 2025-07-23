@@ -1,65 +1,117 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import FadeIn from '../animations/FadeIn';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 
 const PortfolioSection = () => {
+  const [activePhotos, setActivePhotos] = useState<string[] | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const projects = [
     {
-      title: "Digitalization System for Logistics Company",
+      title: "Company Website & Legal Branding System",
+      role: "Project Manager & System Analyst",
+      at: "PT. Cahaya Trans Utama",
+      description: "Led a cross-functional team to design and develop a company website for a logistics firm, including legal and branding components.",
+      challenges: [
+        "Aligning business needs with technical specifications",
+        "Ensuring HAKI (intellectual property) compliance",
+        "Managing remote collaboration across teams"
+      ],
+      outcomes: [
+        "Delivered project on-time within 10 months",
+        "Completed HAKI registration for brand assets",
+        "Improved internal system visibility and digital presence"
+      ],
+      technologies: ["System Analysis", "UI/UX Design", "Project Coordination", "Legal Documentation"],
+      duration: "10 months",
+      teamSize: "3 members",
+      photos: [
+        "/images/project1/foto1.png",
+        "/images/project1/foto2.png",
+        "/images/project1/foto3.png"
+      ]
+    },
+    {
+      title: "PPSDM Migas Learning Animation Project",
       role: "Project Manager",
-      description: "Led the complete digital transformation of a traditional logistics company, implementing modern tracking systems and automated workflows.",
+      at: "PT. Lontong Opus Magnum (Lopus)",
+      description: "As Vendor managed the production of educational video content for a national oil and gas training center under the Indonesian Ministry of Energy.",
       challenges: [
-        "Legacy system integration",
-        "Staff training and adoption",
-        "Real-time tracking implementation"
+        "Gathering diverse training materials from government PICs",
+        "Coordinating content production with creative teams",
+        "Ensuring deadlines for multiple animation outputs"
       ],
       outcomes: [
-        "40% reduction in processing time",
-        "Improved customer satisfaction scores",
-        "Seamless staff transition to digital workflows"
+        "Completed content delivery within timeline",
+        "Received positive feedback from clients",
+        "Enhanced team collaboration using project management tools"
       ],
-      technologies: ["Project Management", "SDLC", "Process Optimization", "Team Leadership"],
-      duration: "8 months",
-      teamSize: "12 members"
+      technologies: ["Content Management", "Project Planning", "Stakeholder Communication", "Davinci Resolve", "Adobe After Effect"],
+      duration: "12 months",
+      teamSize: "10 members",
+      photos: [
+        "/images/project2/foto1.jpg",
+        "/images/project2/foto2.jpg",
+        "/images/project2/foto3.jpg"
+      ]
     },
     {
-      title: "Government Learning Platform",
-      role: "Business Analyst",
-      description: "Analyzed requirements and designed user flows for a comprehensive e-learning platform serving government employees nationwide.",
+      title: "Public Service Web Template",
+      role: "Backend Developer Intern",
+      at: "Diskominfo Semarang",
+      description: "Contributed to the development of backend systems and responsive web design templates at Semarang City Government’s Communication Office.",
       challenges: [
-        "Complex stakeholder requirements",
-        "Scalability for nationwide deployment",
-        "Accessibility compliance"
+        "Working with legacy systems and municipal requirements",
+        "Designing modern UI while preserving accessibility",
+        "Coordinating with limited technical documentation"
       ],
       outcomes: [
-        "Served 10,000+ concurrent users",
-        "98% user satisfaction rate",
-        "Full accessibility compliance achieved"
+        "Delivered functional template used in multiple city apps",
+        "Improved backend data integration and response times",
+        "Enhanced interface consistency across platforms"
       ],
-      technologies: ["Business Analysis", "UML", "Requirement Gathering", "User Experience Design"],
+      technologies: ["PHP", "MySQL", "UI Design", "Responsive Web", "Backend Integration"],
+      duration: "1 months",
+      teamSize: "7 members",
+      photos: [
+        "/images/project3/foto1.jpg",
+        "/images/project3/foto2.jpg",
+        "/images/project3/foto3.jpg"
+      ]
+    },
+    {
+      title: "Electrical Product Development",
+      role: "R&D Assistant Intern",
+      at: "PT. Tata Rapika Globalindo",
+      description: "Assisted in the research and development of electrical products from prototype to mass production, collaborating with cross-functional teams.",
+      challenges: [
+        "Ensuring product design aligned with production capabilities",
+        "Collaborating with engineering and marketing to meet market needs",
+        "Documenting technical specifications under supervision"
+      ],
+      outcomes: [
+        "Supported development of a new product line from concept to pilot phase",
+        "Maintained and updated technical documentation for testing and production",
+        "Improved communication between R&D and production units"
+      ],
+      technologies: ["Electrical Design", "Technical Documentation", "Product Testing", "Cross-functional Coordination"],
       duration: "6 months",
-      teamSize: "8 members"
-    },
-    {
-      title: "Backend Integration and UI Flow",
-      role: "System Analyst",
-      description: "Designed and documented comprehensive system architecture for seamless backend integration with intuitive user interface flows.",
-      challenges: [
-        "Complex API integrations",
-        "Performance optimization",
-        "Cross-platform compatibility"
-      ],
-      outcomes: [
-        "99.9% system uptime achieved",
-        "50% improvement in API response times",
-        "Unified user experience across platforms"
-      ],
-      technologies: ["System Analysis", "API Design", "BPMN", "Technical Documentation"],
-      duration: "4 months",
-      teamSize: "6 members"
+      teamSize: "4 members",
+      photos: [
+        "/images/project4/foto1.jpg",
+        "/images/project4/foto2.jpg",
+        "/images/project4/foto3.jpg"
+      ]
     }
   ];
 
@@ -68,7 +120,7 @@ const PortfolioSection = () => {
       <div className="container mx-auto px-4">
         <FadeIn delay={200}>
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Portfolio & Case Studies</h2>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">Portfolio</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
               Showcasing successful projects where business goals meet innovative technical solutions
             </p>
@@ -85,8 +137,11 @@ const PortfolioSection = () => {
                       <CardTitle className="text-2xl md:text-3xl mb-2 group-hover:text-primary transition-colors">
                         {project.title}
                       </CardTitle>
-                      <Badge variant="secondary" className="text-sm">
+                      <Badge variant="secondary" className="text-sm mr-2">
                         {project.role}
+                      </Badge>
+                      <Badge variant="secondary" className="text-sm">
+                        {project.at}
                       </Badge>
                     </div>
                     <div className="flex gap-4 text-sm text-muted-foreground">
@@ -95,12 +150,12 @@ const PortfolioSection = () => {
                     </div>
                   </div>
                 </CardHeader>
-                
+
                 <CardContent className="space-y-6">
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     {project.description}
                   </p>
-                  
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <h4 className="font-semibold mb-3 text-destructive">Key Challenges</h4>
@@ -113,7 +168,7 @@ const PortfolioSection = () => {
                         ))}
                       </ul>
                     </div>
-                    
+
                     <div>
                       <h4 className="font-semibold mb-3 text-green-600">Outcomes & Results</h4>
                       <ul className="space-y-2">
@@ -126,7 +181,7 @@ const PortfolioSection = () => {
                       </ul>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-semibold mb-3">Technologies & Skills</h4>
                     <div className="flex flex-wrap gap-2">
@@ -137,12 +192,65 @@ const PortfolioSection = () => {
                       ))}
                     </div>
                   </div>
-                  
+
                   <div className="pt-4 border-t border-border/50">
-                    <Button variant="ghost" className="group p-0 h-auto">
-                      <span className="mr-2">View Case Study</span>
-                      <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-                    </Button>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="ghost"
+                          className="group p-0 h-auto"
+                          onClick={() => {
+                            setActivePhotos(project.photos || []);
+                            setActiveIndex(0);
+                          }}
+                        >
+                          <span className="mr-2">View Photos</span>
+                          <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+                        </Button>
+                      </DialogTrigger>
+
+                      <DialogContent className="max-w-3xl">
+                        <DialogHeader>
+                          <DialogTitle className="text-xl mb-4">Project Photos</DialogTitle>
+                        </DialogHeader>
+                        {activePhotos && activePhotos.length > 0 ? (
+                          <div className="relative">
+                            <img
+                              src={activePhotos[activeIndex]}
+                              alt={`Slide ${activeIndex + 1}`}
+                              className="w-full rounded-md object-cover max-h-[500px]"
+                            />
+                            <div className="flex justify-between mt-4">
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() =>
+                                  setActiveIndex(
+                                    (prev) => (prev - 1 + activePhotos.length) % activePhotos.length
+                                  )
+                                }
+                              >
+                                Prev
+                              </Button>
+                              <Button
+                                variant="outline"
+                                size="sm"
+                                onClick={() =>
+                                  setActiveIndex((prev) => (prev + 1) % activePhotos.length)
+                                }
+                              >
+                                Next
+                              </Button>
+                            </div>
+                            <p className="text-center text-sm text-muted-foreground mt-2">
+                              {activeIndex + 1} / {activePhotos.length}
+                            </p>
+                          </div>
+                        ) : (
+                          <p className="text-sm text-muted-foreground">No photos available.</p>
+                        )}
+                      </DialogContent>
+                    </Dialog>
                   </div>
                 </CardContent>
               </Card>

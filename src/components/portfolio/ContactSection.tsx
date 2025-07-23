@@ -45,20 +45,20 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "zidane.romandhon@email.com",
-      href: "mailto:zidane.romandhon@email.com"
+      value: "zidan.workaholic@email.com",
+      href: "mailto:zidan.workaholic@email.com"
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "linkedin.com/in/zidane-romandhon",
-      href: "https://linkedin.com/in/zidane-romandhon"
+      value: "linkedin.com/in/zidanerp",
+      href: "https://linkedin.com/in/zidanerp"
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+62 812-3456-7890",
-      href: "tel:+6281234567890"
+      value: "+62 821-3399-4430",
+      href: "tel:+6282133994430"
     },
     {
       icon: MapPin,
