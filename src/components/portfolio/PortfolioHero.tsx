@@ -63,7 +63,7 @@ const PortfolioHero = () => {
                 size="lg"
                 className="group"
               >
-                <a href="/Zidane Romandhon Putra-CV.pdf" download>
+                <a href="/public/CV_Zidane Romandhon Putra.pdf" download>
                   <Download className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
                   Download CV
                 </a>
